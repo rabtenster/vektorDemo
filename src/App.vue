@@ -25,11 +25,7 @@ export default {
         divId
     );
     const modelId = 'ca1fc12d33f635cda586e025b27ee0d571b1a3ce42e98e779afe84e966b6ee2c';
-    const coordinateSystem = {
-          originPositionX: null,
-          originPositionY: null,
-          originPositionZ: null,
-          originPositionRotationZ: null,};
+    const coordinateSystem = 'ForceZeroOrigin';
     await vektorEmbedded.addModel(modelId, coordinateSystem);
     vektorEmbedded.flyToModel(modelId);
   }
