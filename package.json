@@ -1,0 +1,19 @@
+{
+  "name": "vektor3d",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.11",
+    "vektor-embedded": "https://cdn.vektor.io/vektor-embedded/basic/0.32.3/vektor-embedded-basic-0.32.3.tgz"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "vite": "^5.0.8"
+  }
+}
