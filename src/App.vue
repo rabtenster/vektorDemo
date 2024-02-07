@@ -28,9 +28,12 @@ export default {
     const coordinateSystem = 'ForceZeroOrigin';
     await vektorEmbedded.addModel(modelId, coordinateSystem);
     vektorEmbedded.flyToModel(modelId);
+    vektorEmbedded.flyToModel(modelId, { duration: 2 });
+
   }
 }
 </script>
 
 <style>
+
 </style>
