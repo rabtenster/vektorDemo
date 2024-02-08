@@ -1,5 +1,5 @@
 <template>
-  <div id="vektorioContainer"></div>
+  <div id="vektorioContainer" class="vektorContainer"></div>
 </template>
 
 <script>
@@ -34,5 +34,8 @@ export default {
 </script>
 
 <style>
-
+  #vektorioContainer {
+    width: 100vw !important;
+    height: 100vh !important;
+  }
 </style>
