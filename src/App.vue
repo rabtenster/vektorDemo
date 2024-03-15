@@ -4,6 +4,7 @@
 
 <script>
 import VektorEmbeddedBasic from 'vektor-embedded';
+
 export default {
   name: 'App',
   data() {
@@ -11,31 +12,30 @@ export default {
     }
   },
 
-  computed: {
+  mounted() {
+    this.loadVektorEmbedded();
   },
-
   methods: {
-  },
+    async loadVektorEmbedded() {
+      const sessionToken = '7b70078fa1573627b9403cd8842cdb08823c03043ca8be5d0a86e957a491be96';
+      const divId = 'vektorioContainer';
+      const modelId = 'ca1fc12d33f635cda586e025b27ee0d571b1a3ce42e98e779afe84e966b6ee2c';
+      const coordinateSystem = 'ForceZeroOrigin';
 
-  async mounted() {
-    const sessionToken = '7b70078fa1573627b9403cd8842cdb08823c03043ca8be5d0a86e957a491be96';
-    const divId = 'vektorioContainer';
-    const vektorEmbedded = await VektorEmbeddedBasic.create(
-        sessionToken,
-        divId
-    );
-    const modelId = 'ca1fc12d33f635cda586e025b27ee0d571b1a3ce42e98e779afe84e966b6ee2c';
-    const coordinateSystem = 'ForceZeroOrigin';
-    await vektorEmbedded.addModel(modelId, coordinateSystem);
-    vektorEmbedded.flyToModel(modelId);
+      const ve = new VektorEmbedded();
+      await ve.init(true)
+      ve.mount(sessionToken, divId);
+      // const vek = new VektorEmbeddedBasic(sessionToken, divId);
+      // const vek = await VektorEmbeddedBasic.create(sessionToken, divId);
+      // console.log("base =", vek);
+      await ve.addModel(modelId, coordinateSystem)
+      ve.flyToModel(modelId);
 
+    }
   }
 }
 </script>
 
 <style>
-  #vektorioContainer {
-    width: 100vw !important;
-    height: 100vh !important;
-  }
+
 </style>
